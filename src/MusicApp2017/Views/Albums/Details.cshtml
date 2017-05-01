@@ -1,0 +1,35 @@
+@model IEnumerable<MusicApp2017.Models.Album>
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h3>Album Details</h3>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Title
+        </dt>
+        <dd>
+            @Model.First().Title
+        </dd>
+        <dt>
+            Artist
+        </dt>
+        <dd>
+            @Model.First().Artist.Name
+        </dd>
+        <dt>
+            Genre
+        </dt>
+        <dd>
+            @Model.First().Genre.Name
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.First().AlbumID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
